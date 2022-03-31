@@ -1,3 +1,5 @@
+/*This application code helps in RTC interfacing */
+
 #include<stdio.h>
 #include<stdint.h>
 void main(void)
