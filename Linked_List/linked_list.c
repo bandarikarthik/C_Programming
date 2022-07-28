@@ -16,6 +16,8 @@ void delete_at_begining(struct node* receive);
 void delete_at_end(struct node* receive);
 void delete_data(struct node* receive,int number);
 
+void insert_position(struct node *receive,int number,int position);
+
 struct node *Head=NULL;
 
 void main(void)
@@ -35,6 +37,15 @@ delete_at_end(Head);printf("\ndelete at end\n");
 display_linked_list(Head);
 delete_data(Head,15);printf("\ndelete the number in linked list\n");
 display_linked_list(Head);
+insert_position(Head,15,2);printf("\nafter entering the position \n");
+display_linked_list(Head);
+delete_data(Head,15);printf("\ndelete the number in linked list\n");
+display_linked_list(Head);printf("\n");
+create_node(Head,15);display_linked_list(Head);printf("\n");
+
+delete_data(Head,25);display_linked_list(Head);
+
+
 }
 
 void create_node(struct node *receive,int number)
@@ -149,3 +160,18 @@ void delete_data(struct node* receive,int number){
     
     
 }
+void insert_position(struct node *receive,int number,int position){
+	
+	int i;
+	struct node *ptr=NULL,*new;
+	new = (struct node*)malloc(sizeof(struct node));
+	new->data = number;
+	ptr = receive;
+	for(i=0;i<position-1;i++)ptr = ptr->next;
+	
+	new->next = ptr->next;
+	ptr->next = new;
+	
+	
+}
+
