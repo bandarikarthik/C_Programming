@@ -83,7 +83,7 @@ printf("printing Reverse elements in an Double_LL: ");
 	    
 	    qtr=ptr;
 	    ptr=ptr->next;
-	//printf("%d ",ptr->data);
+	
 }	while(qtr!=NULL)
 	{
 		printf("%d ",qtr->data);
