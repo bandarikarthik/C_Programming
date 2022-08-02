@@ -13,6 +13,9 @@ struct node{
 void Create_Double_LL(struct node *receive,int number);
 void Display_Double_LL(struct node *receive);
 void Display_Reverse_Double_LL(struct node *receive);
+void inserting_at_begining(struct node *receive,int number);
+void inserting_at_ending(struct node *receive,int number);
+
 
 struct node *Head=NULL;
 
@@ -57,6 +60,13 @@ if(Head == NULL){
 		Create_Double_LL(Head,13);Create_Double_LL(Head,14);
 		Display_Double_LL(Head);
 		Display_Reverse_Double_LL(Head);
+		
+		inserting_at_begining(Head,10);	Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
+		inserting_at_ending(Head,15);	Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
+		
+		
+		
+		
 	}
 	
 void Display_Double_LL(struct node *receive){
@@ -83,7 +93,7 @@ printf("printing Reverse elements in an Double_LL: ");
 	    
 	    qtr=ptr;
 	    ptr=ptr->next;
-	
+	//printf("%d ",ptr->data);
 }	while(qtr!=NULL)
 	{
 		printf("%d ",qtr->data);
@@ -94,7 +104,34 @@ printf("\n");
 	
 }	
 
+void inserting_at_begining(struct node *receive,int number){
 	
+	
+	struct node *new;
+	new=(struct node*)malloc(sizeof(struct node));
+	new->data = number;
+	new->prev=NULL;
+	new->next=receive;
+	receive->prev=new;
+	Head=new;
+	printf("after inserting begining \n");
+	
+		
+}
+void inserting_at_ending(struct node *receive,int number){
+	
+	
+	struct node *new,*ptr;
+	new=(struct node*)malloc(sizeof(struct node));
+	new->data = number;
+	new->next=NULL;
+	ptr=receive;
+	while(ptr->next!=NULL)ptr=ptr->next;
+	new->prev=ptr;
+	ptr->next=new;
+	
+	
+}
 	
 	
 	
