@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 struct node{
-	
+
 	int data;
 	struct node *next;
 	struct node *prev;
-	
+
 };
 
 void Create_Double_LL(struct node *receive,int number);
@@ -23,6 +23,11 @@ void inserting_at_ending(struct node *receive,int number);
 void inserting_at_position(struct node *receive,int number,int position);
 
 void deleting_at_begining(struct node *receive);
+void deleting_at_ending(struct node *receive);
+
+
+
+
 
 struct node *Head=NULL;
 
@@ -74,7 +79,7 @@ if(Head == NULL){
 		inserting_at_position(Head,10,5);Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
 		
 		deleting_at_begining(Head);Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
-	
+		deleting_at_ending(Head);Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
 		
 	}
 	
@@ -128,6 +133,14 @@ void inserting_at_begining(struct node *receive,int number){
 		
 }
 
+void deleting_at_ending(struct node *receive){
+	
+	while(receive->next!=NULL)receive=receive->next;
+	receive->prev->next=NULL;
+	free(receive);
+	
+}
+
 void deleting_at_begining(struct node *receive){
 	
 	Head = receive->next;
@@ -176,5 +189,8 @@ void inserting_at_position(struct node *receive,int number,int position){// betw
 	
 	
 }
+
+
+
 
 
