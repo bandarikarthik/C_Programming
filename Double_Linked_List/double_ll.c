@@ -13,9 +13,16 @@ struct node{
 void Create_Double_LL(struct node *receive,int number);
 void Display_Double_LL(struct node *receive);
 void Display_Reverse_Double_LL(struct node *receive);
+
+
+
+
 void inserting_at_begining(struct node *receive,int number);
 void inserting_at_ending(struct node *receive,int number);
 
+void inserting_at_position(struct node *receive,int number,int position);
+
+void deleting_at_begining(struct node *receive);
 
 struct node *Head=NULL;
 
@@ -39,7 +46,7 @@ if(Head == NULL){
 	}
 	else{
 		
-		while(ptr)
+		while(ptr)	
 		{
 			qtr=ptr;
 			ptr = ptr->next;			
@@ -64,8 +71,10 @@ if(Head == NULL){
 		inserting_at_begining(Head,10);	Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
 		inserting_at_ending(Head,15);	Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
 		
+		inserting_at_position(Head,10,5);Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
 		
-		
+		deleting_at_begining(Head);Display_Double_LL(Head);Display_Reverse_Double_LL(Head);
+	
 		
 	}
 	
@@ -118,6 +127,19 @@ void inserting_at_begining(struct node *receive,int number){
 	
 		
 }
+
+void deleting_at_begining(struct node *receive){
+	
+	Head = receive->next;
+	Head->prev=NULL;
+	free(receive);
+	receive=NULL;
+	printf("after deleting at begining \n");
+	
+    
+}
+
+
 void inserting_at_ending(struct node *receive,int number){
 	
 	
@@ -135,3 +157,24 @@ void inserting_at_ending(struct node *receive,int number){
 	
 	
 	
+void inserting_at_position(struct node *receive,int number,int position){// between starting and ending only
+	
+	
+	struct node *new=NULL,*ptr=NULL,*qtr=NULL;
+	ptr=receive;
+	new=(struct node*)malloc(sizeof(struct node));
+	new->data = number;
+	while(position--){
+		qtr=ptr;
+		ptr=ptr->next;
+		
+	}
+	new->prev=ptr->prev;
+	qtr->next=new;
+	new->next=ptr;
+	ptr->prev=new;
+	
+	
+}
+
+
