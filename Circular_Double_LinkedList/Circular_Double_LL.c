@@ -17,6 +17,11 @@ void Display_CircularDouble_LL(struct node *receive);
 
 void inserting_at_begining(struct node *receive,int number);
 void inserting_at_ending(struct node *receive,int number);
+
+void deleting_at_begining(struct node *receive);
+void deleting_at_ending(struct node *receive);
+
+
 	
 struct node *Head=NULL;
 
@@ -99,7 +104,38 @@ void Display_CircularDouble_LL(struct node *receive){
 		Create_CircularDouble_LL(Head,5);
 		Display_CircularDouble_LL(Head);
 		
+		deleting_at_begining(Head);
+		Display_CircularDouble_LL(Head);
 		
+		
+		deleting_at_begining(Head);
+		Display_CircularDouble_LL(Head);
+		
+		deleting_at_ending(Head);
+	   Display_CircularDouble_LL(Head);
+	   
+	   deleting_at_ending(Head);
+	   Display_CircularDouble_LL(Head);
+	   
+	   deleting_at_ending(Head);
+	   Display_CircularDouble_LL(Head);
+	 
+	   deleting_at_ending(Head);
+	   Display_CircularDouble_LL(Head);  	
+
+     	inserting_at_ending(Head,4);
+		Display_CircularDouble_LL(Head);   
+	   
+	   deleting_at_ending(Head);
+	   Display_CircularDouble_LL(Head);  
+	   
+	   inserting_at_begining(Head,20);
+     	Display_CircularDouble_LL(Head);
+     	
+     	Create_CircularDouble_LL(Head,4);
+		Display_CircularDouble_LL(Head);
+		
+	   
 	}
 	
 void inserting_at_begining(struct node *receive,int number){
@@ -163,7 +199,39 @@ void inserting_at_begining(struct node *receive,int number){
 	}
 	
 	
+	void deleting_at_begining(struct node *receive){
+		
+	struct node *ptr;	
+	ptr=receive;
+	while(ptr->next!=Head)ptr=ptr->next;
+	ptr->next = receive->next;
+	receive->next->prev = ptr;
+	Head = receive->next;
+	free(receive);
+	receive=NULL;
+		
+	}
+	
+	
+	void deleting_at_ending(struct node *receive){
+		
+	struct node *ptr,*qtr;
+	
+	ptr=receive;
+	qtr=NULL;
+	while(ptr->next!=Head)
+	{
+		qtr=ptr;
+		ptr=ptr->next;
+	}
+	qtr->next = receive;
+	receive->prev = qtr;
+	free(ptr);
+	ptr=NULL;
 	
 	
 	
+	
+	
+	}
 	
