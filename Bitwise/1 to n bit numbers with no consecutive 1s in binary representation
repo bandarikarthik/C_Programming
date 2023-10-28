@@ -1,1 +1,24 @@
 
+#include <stdio.h>
+void PrintNonConsecutiveNumber(int n);
+
+int main()
+{
+ int number;   
+ printf("Enter the No of bits\n");
+ scanf("%d",&number);
+ PrintNonConsecutiveNumber(number);
+   return 0;
+}
+void PrintNonConsecutiveNumber(int n){
+    
+    int max = (1<<n);
+    for(int i=1;i<max;i++){
+        
+        if( !(i & (i<<1)) ) printf("%d ",i);
+        
+    }
+    
+}
+
+
