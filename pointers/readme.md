@@ -1,1 +1,0 @@
-# example programs using pointers 
