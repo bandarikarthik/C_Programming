@@ -24,3 +24,4 @@ return 0;
 
 }
 
+//Note:  above code was compiled in stm32 IDE with Mingwc GCC compiler executed in x86 PC.
