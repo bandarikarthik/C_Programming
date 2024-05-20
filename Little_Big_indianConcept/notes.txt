@@ -1,1 +1,34 @@
+Just learned about Motorola/Big Indian format.
 
+Intel/Little indian will be exctly opposite.
+
+
+How to remember?? tip. 
+in CAN Document if data is present like this for 2 bytes 
+
+HByte		LByte
+AB 			 CD  
+
+D0			 D1
+
+
+0xABCD is data then it is Motorola (Big indian)
+Remember Motorola only.
+
+
+Number system format:
+---------------------
+
+To illustrate, consider the hexadecimal number 0x76543210;.
+This 32-bit integer is composed of four bytes: 76, 54, 32, and 10.
+
+Big endian format:
+------------------
+
+Byte address | 0x01 | 0x02 | 0x03 | 0x04 |
+Byte content | 0x76 | 0x54 | 0x32 | 0x10 |
+
+  0xABCD
+MSB    LSB 
+ 
+In Higher address, LSB value will be stored.
