@@ -1,1 +1,45 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define INT_BITS        8  //rotation for 1byte 
+#define LEFT            3
+#define BYTE_NO        127
+int main()
+{
+  
+  uint8_t byte = BYTE_NO,shift=INT_BITS,temp,circular_left = LEFT,result,result1,final,final2;
+  printf("original bits \t\t  ");
+  for(uint8_t rotation = 7;rotation < shift; rotation--)
+  {
+    temp = (byte & (1 << rotation));
+    if(temp)printf("1");
+        else printf("0");
+  
+  }
+  printf("\n");
+
+ final = (byte >> (shift - circular_left)) | (byte << circular_left);
+  printf("after left rotation bits  ");
+   for(uint8_t rotation = 7;rotation < shift; rotation--)
+  {
+    temp = (final & (1 << rotation));
+    if(temp)printf("1");
+        else printf("0");
+  
+  }
+   printf("\n");
+
+ final2 = (byte << (shift - circular_left)) | (byte >> circular_left);  //just interchange the shift operator 
+  printf("after right rotation bits ");
+   for(uint8_t rotation = 7;rotation < shift; rotation--)
+  {
+    temp = (final2 & (1 << rotation));
+    if(temp)printf("1");
+        else printf("0");
+  
+  } 
+  
+  
+
+}
 
