@@ -1,0 +1,18 @@
+// C program to find XOR without using ^
+#include <stdio.h>
+#include <stdbool.h> 
+
+int myXOR(int x, int y)
+{
+
+return (x | y) & (~x | ~y);
+
+}
+
+
+int main()
+{
+	int x = 3, y = 5;
+	printf("XOR is %d\n", myXOR(x, y));
+	return 0;
+}
