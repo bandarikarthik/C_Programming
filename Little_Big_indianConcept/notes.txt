@@ -27,3 +27,9 @@ Big endian format:
 MSB    LSB 
  
 In Higher address, LSB value will be stored.
+
+
+LittleEndian:
+
+Lower byte lower address stored.
+
