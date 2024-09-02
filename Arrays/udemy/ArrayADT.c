@@ -10,22 +10,32 @@ struct array{
 void Display(struct array);
 void append(struct array* PDarr,int element,int alength);
 void insert(struct array* PDarr,int element,int length,int index);
+void Delete(struct array* PDarr,int length,int index);
+
+
+
 
 void main(void){
     
  struct array arr = {{1,2,3,4,5},10,5}; 
-  printf("Actual: ");  
+ printf("Actual: ");  
  ///arr = {{1,2,3,4,5},10,5}; 
  Display(arr);
  printf("\nAdded: ");
  //Add an element at end 
  append(&arr,6,arr.length);
-  Display(arr);
+ Display(arr);
 
- printf("\nInsert: "); 
+  printf("\nInsert: "); 
   insert(&arr,6,arr.length,3);
   Display(arr);
   
+   printf("\nDelete "); 
+// insert(&arr,6,arr.length,3);
+  Delete(&arr,arr.length,3);
+  Display(arr); 
+  
+
 }
 void Display(struct array Darr){
    
@@ -51,3 +61,17 @@ void insert(struct array* PDarr,int element,int length,int index){
     
     
 }
+
+void Delete(struct array* PDarr,int length,int index){
+    
+        int i = index; 
+    for(;i<length-1;i++)
+    {
+        
+         PDarr->A[i] =  PDarr->A[i+1];
+        
+    }
+     PDarr->length = length-1;
+}
+
+
