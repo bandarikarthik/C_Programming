@@ -1,29 +1,29 @@
 #include<stdio.h>
 #include<stdint.h>
-#define  KEY     5U
 
 
 int arr[] = {8,9,4,7,6,3,10,5,14,2};
 
-int* rotate_left(int* P, uint8_t key, uint8_t size);
+int* rotate_left(int* P, uint8_t size);
 
 void main(void){
     
     uint8_t size = sizeof(arr)/sizeof(arr[0]);
     printf("Size of array %d\n",size);
-    
-    uint8_t key = KEY;  // key value to be search in array
-    
-     int *P = rotate_left(arr,key,size);
+    printf("original Array:   ");
+     for(int i=0;i<size;i++)printf("%d ",arr[i]);
+       printf("\n");
+     int *P = rotate_left(arr,size);
+      printf("Rotate leftArray: ");
      for(int i=0;i<size;i++)printf("%d ",P[i]);
    
 }
 
-int* rotate_left(int* P, uint8_t key, uint8_t size){
+int* rotate_left(int* P, uint8_t size){
     
     int i=0;
     for(;i<size;i++)P[i-1] = P[i];
-    P[i-1] = 0;
+    P[size-1] = 0;
     return P;
     
 }
