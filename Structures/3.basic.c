@@ -11,7 +11,7 @@ int *c;
 int main()
 {
   
-book_t p = { 10,20, &(p.b)};  //very very important
+book_t p = { 10,20, &(p.b)};  //very very important i am assigning b address to c
 
 book_t *ptr;
 ptr= &p;
