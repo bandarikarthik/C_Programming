@@ -46,8 +46,14 @@ printf("packet.longaddr%#X\n",packet.longaddr);
 printf("packet.shortaddr%#X\n",packet.shortaddr);
 printf("packet.addrmode %#X\n",packet.addrmode);
 
+printf("size of structure %ld\n", sizeof(struct spacket));
+ 
     return 0;
 }
+
+
+
+/*
 //output:
 Enter packet value: abcdefab
 packet.crc 0X3
@@ -58,8 +64,7 @@ packet.sensor 0X3
 packet.longaddr0X5E
 packet.shortaddr0X1
 packet.addrmode 0X1
-
-==============================================================================================================
+*/
 
 
 
