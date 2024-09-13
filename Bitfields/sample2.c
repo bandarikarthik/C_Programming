@@ -55,7 +55,7 @@ printf("size of structure %ld\n", sizeof(struct spacket));
 /*
 
 Enter packet value: abcdefaa
-packet.crc 0X2
+packet.crc 0X3
 packet.status 0
 packet.payload 0XDF5
 packet.bat 0X3
