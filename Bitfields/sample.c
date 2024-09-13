@@ -64,6 +64,7 @@ packet.sensor 0X3
 packet.longaddr0X5E
 packet.shortaddr0X1
 packet.addrmode 0X1
+size of structure 10
 */
 
 
