@@ -1,18 +1,15 @@
-//Binary representation of a 8 bit given number
-//the value should be from 0 to 255
-
-
 #include <stdio.h>
 #include<stdint.h>
 #define sizebits 8U
 
 int main()
 {
-uint8_t number = 255,count=0;
+uint8_t number = 0x55,count=0;
 for(int i = 7; i >= 0;i--)
 {
    if(number & (1<<i)) printf("1");
-   else printf("0");   
+   else printf("0");  
+   if(i==0)break;
 }
     return 0;
 }
